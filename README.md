@@ -1,8 +1,9 @@
 # Data Cleaning in Power Query
 
-This project showcases my data cleaning and transformation skills using Power Query. The dataset contains job postings for Data Science related roles and was sourced from Kaggle and saved locally as an Excel file for processing.
+This project showcases my data cleaning and transformation skills using Power Query. The dataset contains job postings for Data Science related roles and was sourced from Kaggle and saved locally for processing. This project was undertaken to demonstrate my data cleaning and transformation skills using Power Query. 
+
 ## Objective
-The goal of this project is to clean, prepare, and structure the data so that meaningful insights can be extracted. In particular, the analysis aims to answer the following key questions:
+The primary objective of this project is to clean, prepare, and organize the dataset to ensure it is fully ready for analysis. To validate the effectiveness of the cleaning process, exploratory analysis was performed to demonstrate that the transformed data could successfully answer questions such as:
 - **Which job titles or roles offer the highest salaries?**
 - **Which states provide the best compensation for data professionals?**
 - **What company sizes tend to pay the most?**
@@ -18,7 +19,7 @@ The dataset used in this project contains job postings for Data Science–relate
 
 Many job titles referred to the same role but were labeled differently (e.g., “Junior Data Analyst”). Used conditional logic (IF statements) to standardize these variations into consistent titles (e.g., any title containing “Data Scientist” was standardized to “Data Scientist”).
 
-![IF Statement - Roles ](docs/ifStatementJobRoles.png)
+![IF Statement - Roles ](docs/jobrolespay.png)
 
 ### 2. **Handling Company Size Values**
 
@@ -36,7 +37,7 @@ To resolve this, I created artificial commas for locations that lacked one. I al
 I created a custom column called **Location Correction** using an IF statement to assign a comma to each value. 
         
 
-![State Abbreviations ](docs/generating-commas.png)
+![State Abbreviations ](docs/locationcorrection.png)
 
 After correcting all values in this way, I split the **Location Correction** column by the comma delimiter to extract the state abbreviation.
 
@@ -46,6 +47,8 @@ To determine which roles paid the best, I duplicated the query and named it “S
 I kept only the relevant columns: **Min Sal**, **Max Sal**, and **Role Type**.
 
 Changed Min and Max salary columns to Currency and multiplied values by 1,000 to reflect monetary values.
+
+<img src="docs/multiply.png" width="70%" />
 
 Used Group By on Role Type and calculated:
 - Average Min Salary
@@ -58,7 +61,7 @@ Used Group By on Role Type and calculated:
 
 <img src="docs/salcalculation.png" width="50%" />
 
-The results showed that Data Scientist roles had the highest average salary.
+✅  The results showed that Data Scientist roles had the highest average salary.
 
 ![Calculating Salaries ](docs/HighestSalaries.png)
 
@@ -71,10 +74,41 @@ Used Group By on Role Type and calculated:
   
 <img src="docs/companysizeandpay.png" width="70%" />
 
- The results showed tht Companies with 51 to 200 employees have the highest average salary
+ ✅ The results showed that Companies with 51 to 200 employees have the highest average salary
 
-### 7. Calculating Salary By State
+### 7. Calculating Salary by State
 
+To analyze which states offered the highest salaries, I needed to match the state abbreviations in the dataset with their full state names. The challenge was that the dataset only contained state abbreviations in the State Abbr column, without the corresponding full names.
+
+To fix this:
+
+- I imported a State Mapping Table which containtained a list of state full names and their corresponding two letter abbreviations.
+
+- Prepared the Data for Merging
+   - Before merging, I ensured that the values in the State Abbr column were clean and consistent. This included applying Trim to remove unwanted spaces and ensure character length consistency.
+
+- Merged the Queries
+  - I performed a Left Join between the main dataset and the state mapping table, matching on the 2-letter state abbreviation. This allowed me to bring in the full state names for accurate grouping and reporting.
+
+<img src="docs/mergecolumns.png" width="70%" />
+
+
+- Calculated Average Salaries by State
+        - After merging, I grouped the data by State and calculated average Min and Max salary values.
+
+**Results:**
+
+✅ Delaware showed the highest average salary, although this was based on only one record.
+
+✅ North Carolina, with 9 records, had the next highest average salary and provided a more reliable sample size.
+
+
+<img src="docs/paybystate.png" width="70%" />
+
+## Conclusion 
+This project successfully demonstrated my ability to clean, transform, and prepare real world job posting data using Power Query. Through standardizing text fields, parsing salary ranges, correcting location data, merging lookup tables, and performing grouped aggregations, the dataset was transformed and fully ready for analysis.
+
+---
 
 ## 📂 Repository Structure
 
