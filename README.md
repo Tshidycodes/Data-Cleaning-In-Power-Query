@@ -1,4 +1,4 @@
-# Data Cleaning In Power Query
+# Data Cleaning in Power Query
 
 This project showcases my data cleaning and transformation skills using Power Query. The dataset contains job postings for Data Science related roles and was sourced from Kaggle and saved locally as an Excel file for processing.
 ## Objective
@@ -52,25 +52,42 @@ Used Group By on Role Type and calculated:
 - Average Max Salary
 - Row Count
 - All Rows (for exploration)
+<!-- 
+ ![Calculating Salaries ](docs/salcalculation.png)
+-->
 
-![Calculating Salaries ](docs/salcalculation.png)
-
+<img src="docs/salcalculation.png" width="50%" />
 
 The results showed that Data Scientist roles had the highest average salary.
 
 ![Calculating Salaries ](docs/HighestSalaries.png)
+
+### 6. **Calculating Salaries by Company Size**
+Repeated Step 5 and used columns: **Min Sal**, **Max Sal**, and **Size**.
+Used Group By on Role Type and calculated:
+- Average Min Salary
+- Average Max Salary
+- Row Count
+  
+<img src="docs/companysizeandpay.png" width="70%" />
+
+ The results showed tht Companies with 51 to 200 employees have the highest average salary
+
+### 7. Calculating Salary By State
+
 
 ## 📂 Repository Structure
 
 ```
 Data-Cleaning-In-Power-Query/
 │
-├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
+├── datasets/                           # Raw datasets used for the project 
 │
-├── docs/                             
-│   ├── etl.png                         # PNG image shows all different techniquies and methods of ETL
-│   ├── architecture.png                # PNG image shows the project's architecture
-│   ├── data_catalog.md                 # Catalog of datasets, including field descriptions                        
+│   ├── Uncleaned_DS_jobs.csv           # Raw data from Kaggle in csv format
+│   ├── State_mapping.xlsx              # State mapping table with full names of states
+│   ├── CleanedData.xlsx                # Excel file of relevant columns that are cleaned and transformed
+│
+├── docs/                               # Screenshots showing different techniques applied during cleaning cleaning and transformations                       
 │
 └── README.md                           # Project overview
 ```
