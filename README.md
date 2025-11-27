@@ -1,7 +1,7 @@
 # Data Cleaning In Power Query
 
 This project showcases my data cleaning and transformation skills using Power Query. The dataset contains job postings for Data Science related roles and was sourced from Kaggle and saved locally as an Excel file for processing.
-### Objective
+## Objective
 The goal of this project is to clean, prepare, and structure the data so that meaningful insights can be extracted. In particular, the analysis aims to answer the following key questions:
 - **Which job titles or roles offer the highest salaries?**
 - **Which states provide the best compensation for data professionals?**
@@ -18,7 +18,7 @@ The dataset used in this project contains job postings for Data Science–relate
 
 Many job titles referred to the same role but were labeled differently (e.g., “Junior Data Analyst”). Used conditional logic (IF statements) to standardize these variations into consistent titles (e.g., any title containing “Data Scientist” was standardized to “Data Scientist”).
 
-![IF Statement - Roles ](docs/ifStatementJobRole.png)
+![IF Statement - Roles ](docs/ifStatementJobRoles.png)
 
 ### 2. **Handling Company Size Values**
 
@@ -33,9 +33,10 @@ Extracted the minimum and maximum salary values from the **Salary Estimate** col
 The Location column contained mixed formats, some values included a city and state, while others (e.g., “Remote,” “United States,” or single states) contained no comma. Splitting by comma initially created nulls.
 To resolve this, I created artificial commas for locations that lacked one. I also grouped values such as “Remote” and “United States” into a single category labeled “Other.”
 
-I created a custom column called **Location Correction** using an IF statement to assign a comma-based structure to each value. For example:
-    - If the location was “California,” I converted it to “California, CA.”
-    - If the value was “United States” or “Remote,” I converted it to “Other, Other.” etc
+I created a custom column called **Location Correction** using an IF statement to assign a comma to each value. 
+        
+
+![State Abbreviations ](docs/generating-commas.png)
 
 After correcting all values in this way, I split the **Location Correction** column by the comma delimiter to extract the state abbreviation.
 
@@ -52,7 +53,12 @@ Used Group By on Role Type and calculated:
 - Row Count
 - All Rows (for exploration)
 
+![Calculating Salaries ](docs/salcalculation.png)
+
+
 The results showed that Data Scientist roles had the highest average salary.
+
+![Calculating Salaries ](docs/HighestSalaries.png)
 
 ## 📂 Repository Structure
 
