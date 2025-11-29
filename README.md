@@ -110,18 +110,18 @@ This project successfully demonstrated my ability to clean, transform, and prepa
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```
 Data-Cleaning-In-Power-Query/
 │
-├── datasets/                           # Raw datasets used for the project 
+├── 📁 datasets/                        # Raw datasets used for the project 
 │
 │   ├── Uncleaned_DS_jobs.csv           # Raw data from Kaggle in csv format
 │   ├── State_mapping.xlsx              # State mapping table with full names of states
 │   ├── CleanedData.xlsx                # Excel file of relevant columns that are cleaned and transformed
 │
-├── docs/                               # Screenshots showing different techniques applied during cleaning cleaning and transformations                       
+├── 📁 docs/                           # Screenshots showing different techniques applied during cleaning cleaning and transformations                       
 │
 └── README.md                           # Project overview
 ```
