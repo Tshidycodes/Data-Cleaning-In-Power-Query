@@ -32,6 +32,8 @@ The dataset used in this project contains job postings for Data Science–relate
    ✅  Data Scientist roles have the highest potential salary with an average max of $149,946.99. It also has the highest volume of job listings (415), suggesting that this high salary is a well-established market standard
 
    <img src="docs/salcalculation.png" width="50%" />
+
+    <img src="docs/salarybyroles.png"/>
    
 - **Which states provide the best compensation for data professionals?**
   
@@ -40,11 +42,16 @@ The dataset used in this project contains job postings for Data Science–relate
 ✅ North Carolina, with 9 records, had the next highest average salary and provided a more reliable sample size.
 
 <img src="docs/paybystate.png" width="70%" />
+
+<img src="docs/SalbyStates.png"/>
   
 - **What company sizes tend to pay the most?**
   
    ✅ The results showed that Companies with 51 to 200 employees have the highest average salary
   <img src="docs/companysizeandpay.png" width="70%" />
+
+  <img src="docs/salbycompany.png" width="70%" />
+  
 ---
 
 ## Conclusion 
