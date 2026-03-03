@@ -1,6 +1,6 @@
 # Data Cleaning & Exploratory Data Analysis in Power Query
 
-This project showcases my ability to clean and transform raw data using Power Query. I thereafter carried out an Exploratory Data Analysis (EDA) to help understand the data, identify patterns and ensure that the data is clean and ready for use. 
+This project showcases my ability to clean and transform raw data using Power Query. An Exploratory Data Analysis (EDA) was also carried oud to help understand the data, identify patterns and ensure that the data is clean and ready for use. 
 
 ---
 
@@ -16,7 +16,12 @@ This project showcases my ability to clean and transform raw data using Power Qu
 ## DataSet
 
 The dataset used in this project contains job postings for Data Science–related roles. It was sourced from Kaggle and imported into Power Query from a locally stored CSV file.
-
+- Size: 611 rows, 21 columns
+- Features include:
+  - Job Title
+  - Salary Estimate
+  - Job Description
+  - Company Name
 ---
 
 ## Project Workflow
@@ -27,35 +32,36 @@ The dataset used in this project contains job postings for Data Science–relate
    
 ---
 ## Key Insights
- - **Which job titles or roles offer the highest earning potential?**
+ - **Which job titles or roles offer the highest earning potential?** 
    
-   ✅  Data Scientist roles have the highest potential salary with an average max of $149,946.99. It also has the highest volume of job listings (415), suggesting that this high salary is a well-established market standard
+   Data Scientist roles have the highest potential salary with an average maximum of $149,946.99. The profession also has the highest volume of job listings (415 in total), the high salary across a large number of jobs is the industrry standard of what Data Scientists can expect to earn.
 
-   <img src="docs/salcalculation.png" width="50%" />
+   Roles categorised as "Other" came in second for highest earning potential and have the highest average minimum salary. These are niche roles with rare skillsets do not fall under the typical "Analyst" or "Engineer" labels, as a result even at entry level companies are willing to pay more.
+
+   There is a notable gap between Data Analyssy and Data Engineer, even though they have the same number of roles(47). Data Analysts have a higher earning ceiling ($142,042.55 max) and Data Engineers are slightly lower at $133,510.64 max. However, their minimums are very close (around $93k–$94k), meaning the starting point is similar, but Analysts have more room to grow.
+
+   While often considered a high-paying field, in this dataset, Machine Learning Engineers show the lowest average max salary ($133,950) and the lowest minimum ($89,100). This might be due to the small sample size (only 20 roles)
 
     <img src="docs/salarybyroles.png"/>
    
 - **Which states provide the best compensation for data professionals?**
   
-✅ Delaware showed the highest average salary, although this was based on only one record.
+   While Delaware shows the highest single salary in the dataset, North Carolina appears to be the most consistent high-paying state for data professionals, offering an average salary of $179k across multiple roles.
 
-✅ North Carolina, with 9 records, had the next highest average salary and provided a more reliable sample size.
+  Delaware's highest average salary was based on only one record. North Carolina, with 9 records provided a more reliable sample size.
 
-<img src="docs/paybystate.png" width="70%" />
-
-<img src="docs/SalbyStates.png"/>
+   <img src="docs/SalbyStates.png"/>
   
 - **What company sizes tend to pay the most?**
   
-   ✅ The results showed that Companies with 51 to 200 employees have the highest average salary
-  <img src="docs/companysizeandpay.png" width="70%" />
+   Mid-sized companies with 51 to 200  employees offer the highest salaries. This shows that one does not necessarily need to work for big established coorporations to be paid well. 
 
-  <img src="docs/salbycompany.png" width="70%" />
+  <img src="docs/salbycompany.png"/>
   
 ---
 
 ## Conclusion 
-This project successfully demonstrated my ability to clean, transform, and prepare real world job posting data using Power Query. Through standardizing text fields, parsing salary ranges, correcting location data, merging lookup tables, and performing grouped aggregations, the dataset was transformed and fully ready for analysis.
+   This project successfully demonstrated my ability to clean, transform, and prepare real world job posting data using Power Query. Through a series of steps that included standardizing text fields, parsing salary ranges, correcting location data, merging lookup tables, and performing grouped aggregations, the dataset was transformed and fully ready for analysis.
 
 ---
 
